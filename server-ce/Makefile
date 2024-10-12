@@ -3,13 +3,13 @@
 MONOREPO_ROOT := ../
 export MONOREPO_REVISION := $(shell git rev-parse HEAD)
 export BRANCH_NAME ?= test#$(shell git rev-parse --abbrev-ref HEAD)
-export OVERLEAF_BASE_BRANCH ?= sharelatex/sharelatex-base:$(BRANCH_NAME)
-export OVERLEAF_BASE_LATEST ?= sharelatex/sharelatex-base
-export OVERLEAF_BASE_TAG ?= sharelatex/sharelatex-base:$(BRANCH_NAME)-$(MONOREPO_REVISION)
-export OVERLEAF_BRANCH ?= sharelatex/sharelatex:$(BRANCH_NAME)
-export OVERLEAF_LATEST ?= sharelatex/sharelatex
-export OVERLEAF_TAG ?= sharelatex/sharelatex:$(BRANCH_NAME)-$(MONOREPO_REVISION)
-export OVERLEAF_DOCKER_PLATFORMS ?= linux/arm/v7,linux/arm64/v8,linux/amd64
+export OVERLEAF_BASE_BRANCH ?= ghcr.io/benediktbertsch/sharelatex:$(BRANCH_NAME)
+export OVERLEAF_BASE_LATEST ?= ghcr.io/benediktbertsch/sharelatex
+export OVERLEAF_BASE_TAG ?= ghcr.io/benediktbertsch/sharelatex-base:$(BRANCH_NAME)-$(MONOREPO_REVISION)
+export OVERLEAF_BRANCH ?= ghcr.io/benediktbertsch/sharelatex:$(BRANCH_NAME)
+export OVERLEAF_LATEST ?= ghcr.io/benediktbertsch/sharelatex
+export OVERLEAF_TAG ?= ghcr.io/benediktbertsch/sharelatex:$(BRANCH_NAME)-$(MONOREPO_REVISION)
+export OVERLEAF_DOCKER_PLATFORMS ?= linux/arm64/v8,linux/amd64
 
 all: build-base build-community
 
